@@ -1,3 +1,4 @@
+// operators.js
 let shipHealth = 3;
 let shipAmmo = 3;
 let targetHealth = 3;
