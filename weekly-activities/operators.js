@@ -4,7 +4,7 @@ let shipAmmo = 3;
 let targetHealth = 3;
 
 function isHit() {
-    return Math.random() > .05;
+    return Math.random() > 0.5;
 }
 
 function shipCanFire() {
@@ -38,7 +38,7 @@ function fireShip() {
 function encounter() {
     console.log("You see a target?")
     if (!isDestroyed(targetHealth) && !isDestroyed(shipHealth)) {
-    fireShip();
+        fireShip();
         if (isDestroyed(targetHealth)) {
             console.log("Target Eliminated!");
         }
