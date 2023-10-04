@@ -46,9 +46,10 @@ myProfile.placesLived = [];
 myProfile.placesLived.push(
     {
         place: "Broken Arrow, OK",
-        length: "40 years",
+        length: "35 years",
     }
 );
+
 let placesLived = document.querySelector("#places-lived")
 myProfile.placesLived.forEach(place => {
     const dt = document.createElement("dt");
