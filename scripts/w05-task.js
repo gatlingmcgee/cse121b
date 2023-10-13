@@ -36,25 +36,42 @@ const reset = () => {
 /* sortBy Function */
 const sortBy = (temples) => {
     reset();
-    switch (document.querySelector("#sortBy").value) {
+    let filter = document.getElementById("sortBy").value;
+    switch (filter) {
         case "utah":
             displayTemples(temples.filter(temple => temple.location.includes('Utah')));
-            break;
+            break; 
         case "notutah":
             displayTemples(temples.filter(temple => !temple.location.includes('Utah')));
             break;
         case "older":
-            displayTemples(temples.filter(temple => temple.dedicated < new Date(1950, 0, 1)));
-            break;
+            displayTemples(temples.filter((temple) => new Date(temple.dedicated) < new Date(1950, 0, 1)));
+            break;                       
         case "all":
             displayTemples(temples);
             break;
     }
-}
+
+// const sortBy = (temples) => {
+//     reset();
+//     switch (document.querySelector("#sortBy").value) {
+//         case "utah":
+//             displayTemples(temples.filter(temple => temple.location.includes('Utah')));
+//             break;
+//         case "notutah":
+//             displayTemples(temples.filter(temple => !temple.location.includes('Utah')));
+//             break;
+//         case "older":
+//             displayTemples(temples.filter(temple => temple.dedicated < new Date(1950, 0, 1)));
+//             break;
+//         case "all":
+//             displayTemples(temples);
+//             break;
+//     }
+    }
 
 getTemples();
 
 /* Event Listener */
 
 document.querySelector("#sortBy").addEventListener("change", () => sortBy(templesList));
-
