@@ -68,7 +68,7 @@ const sortBy = (temples) => {
 //             displayTemples(temples);
 //             break;
 //     }
-    }
+}
 
 getTemples();
 
