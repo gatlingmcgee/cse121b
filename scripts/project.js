@@ -16,10 +16,8 @@ const displayPeople = (people) => {
         nameId.textContent = people.id;
         let language = document.createElement("h4");
         language.textContent = people.language;
-        /*let img = document.createElement("img");
-        img.setAttribute("src", people.imageUrl);
-        img.setAttribute("alt", people.location); */
 
+        /* append(var); */
         article.appendChild(name);
         article.appendChild(Bio);
         article.appendChild(nameId);
@@ -47,36 +45,35 @@ const sortBy = (people) => {
     let filter = document.getElementById("sortBy").value;
     switch (filter) {
         case "uyg":
-            displayPeople(people.filter(people => people.language.includes('Uyghur')));
+            displayPeople(people.filter(people => people.language.includes("Uyghur")));
             break; 
         case "mal":
-            displayPeople(people.filter(people => people.language.includes('Maltese')));
+            displayPeople(people.filter(people => people.language.includes("Maltese")));
             break;
         case "sin":
-            displayPeople(people.filter(people => people.language.includes('Sindhi')));
+            displayPeople(people.filter(people => people.language.includes("Sindhi")));
             break;
         case "gal":
-            displayPeople(people.filter(people => people.language.includes('Galician')));
+            displayPeople(people.filter(people => people.language.includes("Galician")));
             break;
         case "ses":
-            displayPeople(people.filter(people => people.language.includes('Sesotho sa Leboa')));
+            displayPeople(people.filter(people => people.language.includes("Sesotho sa Leboa")));
             break;
         case "ice":
-            displayPeople(people.filter(people => people.language.includes('Icelandic')));
+            displayPeople(people.filter(people => people.language.includes("Icelandic")));
             break;
         case "hin":
-            displayPeople(people.filter(people => people.language.includes('Hindi')));
+            displayPeople(people.filter(people => people.language.includes("Hindi")));
             break;
         case "bos":
-            displayPeople(people.filter(people => people.language.includes('Bosnian')));
+            displayPeople(people.filter(people => people.language.includes("Bosnian")));
             break;
         case "set":
-            displayPeople(people.filter(people => people.language.includes('Setswana')));
+            displayPeople(people.filter(people => people.language.includes("Setswana")));
             break;
         case "isi":
-            displayPeople(people.filter(people => people.language.includes('isiZulu')));
+            displayPeople(people.filter(people => people.language.includes("isiZulu")));
             break;
-
         // case "alpha":
         //    people.sort(function(a, b){return a.name-b.name;});
         //    people.filter(people => people.name()) 
