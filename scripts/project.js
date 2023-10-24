@@ -74,8 +74,8 @@ const sortBy = (people) => {
         case "isi":
             displayPeople(people.filter(people => people.language.includes("isiZulu")));
             break;
-        // case "alpha":
-        //    people.sort(function(a, b){return a.name-b.name;});
+        case "alpha":
+           people.sort(function(a, b){return a.name-b.name;});
         //    people.filter(people => people.name()) 
                 
         //     people.sort(function(a, b) {
@@ -87,12 +87,12 @@ const sortBy = (people) => {
         //         }
         //         return 0;
         //     });
-        //     displayPeople(people);
+            displayPeople(people);
 
-        // case "reverse":
-        //     let name = peopleList.reverse();
-        //     displayPeople(name);
-        //     break;  
+        case "reverse":
+            let name = peopleList.reverse();
+            displayPeople(name);
+            break;  
         
         case "all":
             displayPeople(people);
