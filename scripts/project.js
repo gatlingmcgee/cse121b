@@ -67,7 +67,6 @@ const sortBy = (people) => {
         case "hin":
             displayPeople(people.filter(people => people.language.includes('Hindi')));
             break;
-
         case "bos":
             displayPeople(people.filter(people => people.language.includes('Bosnian')));
             break;
