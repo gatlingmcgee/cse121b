@@ -1,60 +1,100 @@
 /* W05: Programming Tasks */
 
 /* Declare and initialize global variables */
-const templesElement = document.querySelector("#temples");
-let templesList = [];
+const peopleElement = document.querySelector("#people");
+let peopleList = [];
 
-/* async displayTemples Function */
-const displayTemples = (temples) => {
-    temples.forEach(temple => {
+/* async displayPeople Function */
+const displayPeople = (people) => {
+    people.forEach(people => {
         let article = document.createElement("article");
-        let templeName = document.createElement("h3");
-        templeName.textContent = temple.name;
-        let img = document.createElement("img");
-        img.setAttribute("src", temple.imageUrl);
-        img.setAttribute("alt", temple.location);
+        let name = document.createElement("h3");
+        name.textContent = people.name;
+        let Bio = document.createElement("h5");
+        Bio.textContent = people.bio;
+        let nameId = document.createElement("h5");
+        nameId.textContent = people.id;
+        let language = document.createElement("h4");
+        language.textContent = people.language;
+        /*let img = document.createElement("img");
+        img.setAttribute("src", people.imageUrl);
+        img.setAttribute("alt", people.location); */
 
-        article.appendChild(templeName);
-        article.appendChild(img);
+        article.appendChild(name);
+        article.appendChild(Bio);
+        article.appendChild(nameId);
+        article.appendChild(language);
 
-        templesElement.appendChild(article);
+        peopleElement.appendChild(article);
     });
 }
 
-/* async getTemples Function using fetch()*/
-const getTemples = async () => {
+/* async getPeople Function using fetch()*/
+const getPeople = async () => {
     const response = await fetch("https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json");
-    templesList = await response.json();
-    displayTemples(templesList);
+    peopleList = await response.json();
+    displayPeople(peopleList);
 }
 
 /* reset Function */
 const reset = () => {
-    templesElement.innerHTML = "";
+    peopleElement.innerHTML = "";
 }
 
 /* sortBy Function */
-const sortBy = (temples) => {
+const sortBy = (people) => {
     reset();
     let filter = document.getElementById("sortBy").value;
     switch (filter) {
-        case "utah":
-            displayTemples(temples.filter(temple => temple.location.includes('Utah')));
+        case "uyg":
+            displayPeople(people.filter(people => people.language.includes('Uyghur')));
             break; 
-        case "notutah":
-            displayTemples(temples.filter(temple => !temple.location.includes('Utah')));
+        case "mal":
+            displayPeople(people.filter(people => people.language.includes('Maltese')));
             break;
-        case "older":
-            displayTemples(temples.filter((temple) => new Date(temple.dedicated) < new Date(1950, 0, 1)));
-            break;                       
+        case "sin":
+            displayPeople(people.filter(people => people.language.includes('Sindhi')));
+            break;
+        case "gal":
+            displayPeople(people.filter(people => people.language.includes('Galician')));
+            break;
+        case "ses":
+            displayPeople(people.filter(people => people.language.includes('Sesotho sa Leboa')));
+            break;
+        case "ice":
+            displayPeople(people.filter(people => people.language.includes('Icelandic')));
+            break;
+        case "hin":
+            displayPeople(people.filter(people => people.language.includes('Hindi')));
+            break;
+        // case "alpha":
+            // peopleList.sort(function(a, b){return a.name-b.name;});
+            // displayPeople(people);
+            // break;
+
+            // people.sort(function(a, b) {
+            //     if (a.name < b.name) {
+            //         return -1;
+            //     } 
+            //     if (a.name > b.name) {
+            //         return 1;
+            //     }
+            //     return 0;
+            // });
+            // displayPeople(people);
+
+        // case "reverse":
+        //     let name = peopleList.reverse();
+        //     displayPeople(name);
+        //     break;  
         case "all":
-            displayTemples(temples);
+            displayPeople(people);
             break;
     }
 }
 
-getTemples();
+getPeople();
 
 /* Event Listener */
 
-document.querySelector("#sortBy").addEventListener("change", () => sortBy(templesList));
+document.querySelector("#sortBy").addEventListener("change", () => sortBy(peopleList));

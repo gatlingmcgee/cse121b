@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/project.css">
 </head>
 
 <body>
@@ -25,18 +25,24 @@
     </ul>
   </nav>
   <main id="gridly">
-    <h1>W05: Programming Tasks</h1>
-    <h2>Fetch(): Some Latter-day Temples</h2>
+    <h1>Project W06</h1>
+    <h2>Fetch(): Identity</h2>
 
     <select id="sortBy" title="Choose a data filter.">
-      <option value="" disabled selected>Filter Temples</option>
-      <option value="utah">alphebetical order</option>
-      <option value="notutah">reverse</option>
-      <option value="older">Built Before 1950</option>
-      <option value="all">No Filter</option>
+      <option value="" disabled selected>Individuals(?)</option>
+      <option value="all">All People (No filter)</option>
+      <!--<option value="alpha">Names: A-Z</option>
+      <option value="reverse">Names: Z-A</option>-->
+      <option value="uyg">Language: Uyghur</option>
+      <option value="mal">Language: Maltese</option>
+      <option value="sin">Language: Sindhi</option>
+      <option value="gal">Language: Galician</option>
+      <option value="ice">Language: Icelandic</option>
+      <option value="hin">Language: Hindi</option>
+      <option value="ses">Language: Sesotho sa Leboa</option>
     </select>
 
-    <div id="temples">
+    <div id="people">
     </div>
   </main>
 
@@ -44,11 +50,10 @@
   <footer>
     &copy;<span id="year"></span> | Week 05 - Fetching Temple Data | CSE 121b
   </footer>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/project.js"></script>
   <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
-  <script src="scripts/project.js"></script>
 </body>
 
 </html>
